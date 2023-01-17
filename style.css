@@ -1,0 +1,208 @@
+body {
+    max-width: 550px;
+    min-width: 250px;
+    padding: 0;
+    margin: 0;
+    margin: 0 auto;
+    background: #07bab5;
+    line-height: 1.4em;
+    font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.todo {
+    position: relative;
+    align-self: center;
+    margin: 150px 0 40px 0;
+    background: #fff;
+    box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
+}
+
+.header h1 {
+    position: absolute;
+    top: -130px;
+    width: 100%;
+    font-size: 100px;
+    text-align: center;
+    color: #ffffff;
+} 
+
+input::placeholder {
+    font-size: 24px;
+    color: #e6e6e6;
+}
+
+.new-todo {
+    position: relative;
+    width: 100%;
+    border: none;
+    padding: 20px 16px 16px 60px;
+    line-height: 1.4em;
+    font-size: 24px;
+}
+
+.main {
+    position: relative;
+    z-index: 2;
+    border-top: 1px solid #e6e6e6; 
+}
+
+.list li {
+    position: relative;
+    font-size: 24px;
+    border-bottom: 1px solid #e6e6e6;
+}
+
+.checkbox-todo {
+    position: absolute;
+    bottom: 100%;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+    right: 100%;
+    border: none;
+}
+
+.list li .toggle {
+	position: absolute;
+	bottom: 0;
+	top: 0;
+	width: 40px;
+	height: auto;
+	margin: auto 0;
+	text-align: center;
+	border: none; 
+	-webkit-appearance: none;
+	appearance: none;
+}
+
+.list li .toggle {
+	opacity: 0;
+}
+
+.list li .toggle + label {
+    background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23ededed%22%20stroke-width%3D%223%22/%3E%3C/svg%3E');
+    background-repeat: no-repeat;
+	background-position: center left;
+}
+
+.list li .toggle:checked + label {
+    background-image: url('data:image/svg+xml;utf8,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2240%22%20height%3D%2240%22%20viewBox%3D%22-10%20-18%20100%20135%22%3E%3Ccircle%20cx%3D%2250%22%20cy%3D%2250%22%20r%3D%2250%22%20fill%3D%22none%22%20stroke%3D%22%23bddad5%22%20stroke-width%3D%223%22/%3E%3Cpath%20fill%3D%22%235dc2af%22%20d%3D%22M72%2025L42%2071%2027%2056l-4%204%2020%2020%2034-52z%22/%3E%3C/svg%3E');
+}
+
+.list li label {
+	display: block;
+    padding: 20px 15px 15px 60px;
+    line-height: 1.2;
+    word-break: break-all;
+	transition: color 0.4s;
+}
+
+.destroy {
+    position: absolute;
+    right: 10px;
+    top: 0px;
+    bottom: 0px;
+    width: 40px;
+    height: 40px;
+    margin: auto 0;
+    margin-bottom: 11px;
+    font-size: 30px;
+    color: #cc9a9a;
+    border: none;
+    background: #fff;
+}
+
+.list li .destroy:hover {
+    color: #af5b5e;
+}
+
+.list li .destroy:after {
+	content: '×';
+}
+.list li:last-child {
+    border-bottom: none;
+}
+
+.footer {
+    height: 35px;
+    padding: 10px 15px;
+    text-align: center;
+    border-top: 1px solid #e6e6e6;
+    color: #777;
+}
+
+.completed {
+    text-decoration: line-through;
+    color: #e6e6e6;
+}
+
+.filters {
+  position: absolute;
+  right: 0;
+  left: 0;
+}
+
+.todo-count {
+    float: left;
+    text-align: left;
+}
+
+.filters li {
+    display: inline;
+}
+
+.filters li a {
+    color: inherit;
+    margin: 3px;
+    padding: 3px 7px;
+    text-decoration: none;
+    border: 1px solid transparent;
+    border-radius: 3px;
+}
+
+.filters li a.selected {
+    border-color: rgba(175, 47, 47, 0.2);
+}
+
+.checkbox-todo + label {
+    position: absolute;
+    top: -52px;
+    left: -7px;
+    width: 60px;
+    height: 34px;
+    font-size: 0;
+    -webkit-transform: rotate(90deg);
+    transform: rotate(90deg);
+}
+
+.checkbox-todo + label:before {
+    content: '❯';
+    font-size: 22px;
+    color: #e6e6e6;
+    padding: 10px 27px 10px 27px;
+}
+
+
+.checkbox-todo:checked + label:before {
+    color: #777;
+}
+
+
+.clear-completed {
+    position: relative;
+    top: -4px;
+    float: right;
+    line-height: 20px;
+    border: none;
+    background: none;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.clear-completed:hover {
+    text-decoration: underline;
+}
