@@ -68,9 +68,9 @@ todoInput.addEventListener('keyup', function (e) {
     todoInput.value = ''
     addTodo();
     saveLocalStorage();
-    countNumberLeft (); 
+    
  }
- 
+ countNumberLeft (); 
 });
 //Удаление задачи
 listTodo.addEventListener('click', function(e){
