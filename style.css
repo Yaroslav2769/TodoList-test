@@ -1,9 +1,7 @@
 body {
-    max-width: 550px;
-    min-width: 250px;
-    padding: 0;
-    margin: 0;
+    width: 850px;
     margin: 0 auto;
+    padding-left: 150px;
     background: #07bab5;
     line-height: 1.4em;
     font: 14px 'Helvetica Neue', Helvetica, Arial, sans-serif
@@ -14,8 +12,9 @@ body {
 }
 
 .todo {
+    min-width: 250px;
+    max-width: 550px;
     position: relative;
-    align-self: center;
     margin: 150px 0 40px 0;
     background: #fff;
     box-shadow: 0 2px 4px 0 rgb(0 0 0 / 20%), 0 25px 50px 0 rgb(0 0 0 / 10%);
@@ -165,7 +164,7 @@ input::placeholder {
 }
 
 .filters li a.selected {
-    border-color: rgba(175, 47, 47, 0.2);
+    border-color: rgb(255, 0, 0);
 }
 
 .checkbox-todo + label {
@@ -206,3 +205,4 @@ input::placeholder {
 .clear-completed:hover {
     text-decoration: underline;
 }
+

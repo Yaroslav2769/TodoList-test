@@ -5,7 +5,7 @@ const btnArrow = document.querySelector('.checkbox-todo');
 const filterAll = document.querySelector('#all');
 const filterActive = document.querySelector('#active');
 const filterCompleted = document.querySelector('#completed');
-const clearCompleted = document.querySelector('.clear-completed')
+const clearCompleted = document.querySelector('.clear-completed');
 
 
 //Массив куда я сохраняю данные 
@@ -37,7 +37,6 @@ function addTodo () {
     if (tasks) {
         tasks.forEach(function(todo, id) {
             let isCompleted = todo.completed == false ?  ''  : 'completed checked';
-
                 message += `
                 <li id='${todo.id}' class='${isCompleted}'>
                   <div class='view'>
@@ -68,7 +67,6 @@ todoInput.addEventListener('keyup', function (e) {
     todoInput.value = ''
     addTodo();
     saveLocalStorage();
-    
  }
  countNumberLeft (); 
 });
@@ -97,10 +95,12 @@ clearCompleted.onclick = function () {
         if (todo.classList.contains('completed')) {
             todo.parentNode.removeChild(todo);
             tasks.splice(todo, 1)
-            saveLocalStorage();
+            saveLocalStorage()
         };
-        countNumberLeft(); 
+        
+        
     });
+    countNumberLeft(); 
 }
 
 
@@ -143,7 +143,6 @@ filterAll.onclick = function filterAllTask () {
     filterCompleted.classList.remove('selected');
    
 }
-
 filterActive.onclick = function filterActiveTask () {
     const taskItem = listTodo.querySelectorAll('li');
     taskItem.forEach(todo => {
@@ -158,7 +157,6 @@ filterActive.onclick = function filterActiveTask () {
   
     
 }
-
 filterCompleted.onclick = function filterCompletedTask () {
     const taskItem = listTodo.querySelectorAll('li');
     taskItem.forEach(todo => {
@@ -170,7 +168,9 @@ filterCompleted.onclick = function filterCompletedTask () {
     filterActive.classList.remove('selected');
     filterAll.classList.remove('selected');
     filterCompleted.classList.add('selected');
-   
 }
+// Сдлеаем счетчик сколько готовы и не готовых задач 
+
+
 
 
